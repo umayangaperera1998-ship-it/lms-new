@@ -6,7 +6,6 @@ import {
   TrendingUp, 
   Calendar, 
   MessageSquare, 
-  ArrowRight,
   GraduationCap
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
