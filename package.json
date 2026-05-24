@@ -18,6 +18,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "pnpm --filter api db:generate",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
