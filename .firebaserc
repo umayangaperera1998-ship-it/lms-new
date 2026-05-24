@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "lms-qa-api",
+    "qa": "lms-qa-api"
+  }
+}
