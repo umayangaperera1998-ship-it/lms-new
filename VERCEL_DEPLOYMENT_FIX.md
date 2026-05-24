@@ -3,13 +3,16 @@
 ## Issues Fixed
 
 ### 1. ✅ Prisma Client Generation
-- **Problem**: TypeScript couldn't find `@prisma/client` exports
-- **Solution**: Ran `pnpm db:generate` to generate Prisma Client
+- **Problem**: TypeScript couldn't find `@prisma/client` exports during Vercel build
+- **Solution**: 
+  - Moved `prisma` from devDependencies to dependencies in package.json
+  - Added `postinstall` and `vercel-build` scripts to run `prisma generate`
+  - Updated vercel.json to use proper serverless configuration
 - **Status**: FIXED
 
 ### 2. ✅ CORS Configuration
-- **Problem**: Backend API blocked frontend requests due to CORS
-- **Solution**: Updated `apps/api/src/main.ts` to allow multiple origins
+- **Problem**: Backend API blocked frontend requests due to CORS policy
+- **Solution**: Updated both `apps/api/src/main.ts` and `apps/api/src/vercel.ts` to allow multiple origins
 - **Status**: FIXED in code
 
 ## Vercel Environment Variables Setup

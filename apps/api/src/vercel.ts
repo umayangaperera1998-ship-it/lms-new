@@ -23,9 +23,25 @@ async function bootstrap() {
   app.use(helmet());
   app.use(cookieParser());
 
-  // CORS
+  // CORS - Allow multiple origins
+  const allowedOrigins = new Set([
+    'http://localhost:3000',
+    'http://localhost:4000',
+    configService.get('FRONTEND_URL'),
+    'https://lms-new-web.vercel.app',
+  ].filter(Boolean));
+
   app.enableCors({
-    origin: configService.get('FRONTEND_URL') || true, // Allow FRONTEND_URL or true for QA
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.has(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Institute-Id'],
