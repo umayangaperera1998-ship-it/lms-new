@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Trash, CheckCircle, Clock, FileText, Settings, Play } from "lucide-react";
+import { Plus, Trash, Clock, FileText, Settings, Play } from "lucide-react";
 
 // Mock quizzes list
 const quizzesList = [

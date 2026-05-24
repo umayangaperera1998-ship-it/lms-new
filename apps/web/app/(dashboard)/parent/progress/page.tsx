@@ -1,9 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  LineChart as LineChartIcon,
+import {
   TrendingUp,
   Award,
   BookOpen,

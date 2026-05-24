@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Select,
   SelectContent,
@@ -34,12 +34,10 @@ import {
   PieChart,
   Pie,
   Cell,
-  Legend,
 } from "recharts";
 import {
   DollarSign,
   TrendingUp,
-  TrendingDown,
   Calendar,
   BookOpen,
   AlertCircle,
@@ -48,18 +46,12 @@ import {
   Printer,
   Mail,
   ArrowUp,
-  ArrowDown,
-  Filter,
   Search,
   CheckCircle,
-  XCircle,
   Clock,
-  CreditCard,
-  Plus,
   ChevronDown,
   ChevronUp,
   Send,
-  MoreVertical,
   Check,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -417,7 +409,7 @@ export default function TeacherEarningsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedClassFilter, setSelectedClassFilter] = useState("all");
   const [selectedStatusFilter, setSelectedStatusFilter] = useState("all");
-  const [dateRangeFilter, setDateRangeFilter] = useState("3months");
+
   const [expandedClassId, setExpandedClassId] = useState<number | null>(null);
 
   // Dialog notifications / feedback state
@@ -553,9 +545,7 @@ export default function TeacherEarningsPage() {
     ];
   }, [earningsData.classes]);
 
-  const totalDonutValue = useMemo(() => {
-    return donutChartData.reduce((acc, curr) => acc + curr.value, 0);
-  }, [donutChartData]);
+
 
   if (!isMounted) {
     return (
@@ -1207,7 +1197,7 @@ export default function TeacherEarningsPage() {
                       paddingAngle={0}
                       dataKey="value"
                     >
-                      {pieChartData.map((entry, index) => (
+                      {pieChartData.map((_, index) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>

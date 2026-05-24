@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { authApi } from "@/lib/api/auth.api";
 import { 
@@ -40,7 +39,7 @@ const tasks = [
 ];
 
 export default function TeacherDashboardOverviewPage() {
-  const router = useRouter();
+
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {

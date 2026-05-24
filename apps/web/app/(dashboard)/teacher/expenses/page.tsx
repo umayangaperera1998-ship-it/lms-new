@@ -2,23 +2,19 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import { 
-  TrendingDown, TrendingUp, DollarSign, Lock, AlertCircle, Grid, Building2, 
-  Users, Gift, Megaphone, BookOpen, Zap, Car, Coffee, Wrench, Laptop, Phone, 
-  MoreHorizontal, Plus, Download, Printer, Search, CheckCircle, Clock, Calendar, 
-  Mail, ChevronDown, ChevronUp, FileText, Activity, CircleDollarSign
+  TrendingDown, TrendingUp, Lock, AlertCircle, Grid, Building2, 
+  Users, Megaphone, BookOpen, Zap, Car, 
+  MoreHorizontal, Plus, Download, Search, CheckCircle, Clock, FileText, Activity, CircleDollarSign
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Progress } from "@/components/ui/progress";
-import { Label } from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, 
-  PieChart, Pie, Cell, LineChart, Line
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell, LineChart, Line
 } from "recharts";
 
 // Mock Data
@@ -227,7 +223,7 @@ const mockExpensesData = {
   }
 };
 
-const COLORS = ["#3B82F6", "#8B5CF6", "#EF4444", "#10B981", "#F59E0B", "#6366F1"];
+
 
 const formatLKR = (amount: number) => {
   return new Intl.NumberFormat("en-LK", {
@@ -474,7 +470,7 @@ export default function TeacherExpensesPage() {
       <div className="space-y-4">
         <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">Expenses by Category</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {mockExpensesData.categories.map((cat, i) => (
+          {mockExpensesData.categories.map((cat) => (
             <Card key={cat.id} className="shadow-sm border hover:shadow-md transition bg-background/40">
               <CardContent className="p-4">
                 <div className="flex justify-between items-start mb-4">

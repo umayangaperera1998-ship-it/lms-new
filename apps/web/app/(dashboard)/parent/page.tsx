@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Users, 
   TrendingUp, 
-  AlertCircle, 
   Calendar,
   CreditCard,
   Clock,
@@ -14,7 +12,6 @@ import {
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Progress } from '@/components/ui/progress';
 import { 
@@ -209,7 +206,7 @@ export default function ParentDashboard() {
                      No recent activities.
                    </div>
                   ) : (
-                    childActivities.map((act, index) => (
+                    childActivities.map((act) => (
                       <div key={act.id} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white dark:border-slate-950 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                           {act.type === 'QUIZ' && <TrendingUp className="w-4 h-4 text-blue-500" />}
