@@ -29,7 +29,9 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "db:seed": "ts-node src/prisma/seed.ts",
-    "clean": "rm -rf dist .turbo node_modules"
+    "clean": "rm -rf dist .turbo node_modules",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma",
