@@ -7,7 +7,7 @@ import { Loader2, CheckCircle2, XCircle } from 'lucide-react';
 
 import { authApi } from '@/lib/api/auth.api';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 function VerifyEmailContent() {
   const router = useRouter();
